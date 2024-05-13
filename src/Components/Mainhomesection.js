@@ -6,6 +6,8 @@ import aboutimage from "../imagess/aboutus.png";
 
 const Mainhomesection = ({TitleData}) => {
   const Wrapper=styled.section`
+  height:80vh;
+
   .main-wrap{
   }
   .wrap{
@@ -105,7 +107,7 @@ text-align:center;
             </div>
             {/* for image section */}
             <div className='img-section'>
-                {/* <img src="images/shophome.jfif" alt="img" /> */}
+                {/* <img src="images/ssd.jpg" alt="img" /> */}
                 <img src={about ? aboutimage : homeimage} alt="img" />
 
 

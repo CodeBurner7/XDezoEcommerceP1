@@ -4,11 +4,13 @@ import { NavLink, useParams } from "react-router-dom";
 import { ProductApi } from "./Api/ProductApi";
 import styled from "styled-components";
 import { useCart } from "./Context/CartContext";
+import aa from "../imagess/aboutus.png"
 
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+  min-height:80vh;
 
   .leftside {
     flex: 0.4;
@@ -102,7 +104,8 @@ const SingleProduct = () => {
   const product = ProductApi.find((curElem) => curElem.id === id);
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
-console.log(product);
+  console.log(product);
+// console.log(product.image[0]);
 
   const increaseQuantity = () => {
     setQuantity(quantity + 1);
@@ -124,9 +127,12 @@ console.log(product);
   }
 
   return (
+    <>
     <Container>
       <div className="leftside">
-        <Image src={product.image} alt={product.name} />
+        <Image src={`/${product.image}`} alt={product.name} />
+{/* <img src="/images/iphone x.jpg" alt="img" /> */}
+
       </div>
       <div className="rightside">
         <div className="product_info">
@@ -152,6 +158,8 @@ console.log(product);
       </NavLink>
       </div>
     </Container>
+    
+    </>
   );
 };
 

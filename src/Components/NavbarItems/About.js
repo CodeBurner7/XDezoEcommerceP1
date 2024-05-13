@@ -8,9 +8,8 @@ const About = () => {
   // const [api,setApi]=useState(ProductApi);
   // const {name}=ProductApi;
   const Wrapper=styled.section`
-  // .productmap_div{
-  //   margin-bottom:20px;    
-  // }`;
+  height:80vh;
+`;
   const data={
     name:"XDezo Ecommerce Site",
     about:"About"

@@ -76,7 +76,8 @@ const Navbar = () => {
   .list_items li a.active {
     // font-weight: bold;
     // color:blue;
-    text-decoration:underline;
+    // text-decoration:underline;
+    border-bottom:3px solid blue;
     text-decoration-color:#0F31F5;
     
   }

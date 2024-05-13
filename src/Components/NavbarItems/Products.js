@@ -1,371 +1,3 @@
-// import React,{useState} from "react";
-// import styled from "styled-components";
-// import { ProductApi } from "../Api/ProductApi";
-
-
-// const Products = () => {
-//   const [api,setApi]=useState(ProductApi);
-//   const Wrapper=styled.section`
-//   `;
-//   return (
-//     <>
-//     <Wrapper>
-//     {api.map((curElem,index)=>{
-//       return (
-//       <div key={curElem.id} className='productmap_div'>
-//         <figure>
-//       <img src={curElem.image} alt="imagess" />
-//       <figcaption className="caption">{curElem.category}</figcaption>
-//       </figure>
-//       <h1>{curElem.name}</h1>
-
-//     </div>
-//       )
-//      })}
-//      </Wrapper>
-//      </>
-//   )
-
-// };
-
-// export default Products;
-
-
-
-
-
-
-// import React, { useState } from "react";
-// import styled from "styled-components";
-// import { ProductApi } from "../Api/ProductApi";
-// import { RiListView } from "react-icons/ri";
-// import { MdGridView } from "react-icons/md";
-
-// const Products = () => {
-//   const [api, setApi] = useState(ProductApi);
-
-//   const Wrapper = styled.section`
-//     display: flex;
-//     flex-direction: column;
-//     gap: 20px;
-
-//     .sortsection {
-//       display: flex;
-//       justify-content: space-between;
-//       align-items: center;
-//       flex-wrap: wrap;
-//       gap: 20px;
-//     }
-
-//     .product_list {
-//       display: flex;
-//       flex-wrap: wrap;
-//       gap: 20px;
-//     }
-
-//     .product_list_lists {
-//       flex: 1 1 200px;
-//       max-width: 300px;
-//       border: 1px solid #ccc;
-//       padding: 20px;
-//       border-radius: 8px;
-//     }
-
-//     .product_list_lists img {
-//       width: 100%;
-//       max-width: 100%;
-//       height: auto;
-//       border-radius: 8px;
-//     }
-
-//     .caption {
-//       margin-top: 10px;
-//       font-size: 14px;
-//     }
-
-//     h1 {
-//       font-size: 18px;
-//       margin: 10px 0;
-//     }
-
-//     p {
-//       font-size: 16px;
-//       color: #333;
-//     }
-
-//     input.search {
-//       padding: 8px 10px;
-//       border-radius: 4px;
-//       border: 1px solid #ccc;
-//     }
-
-//     @media screen and (max-width: 768px) {
-//       .product_list_lists {
-//         flex-basis: calc(50% - 20px);
-//       }
-//     }
-
-//     @media screen and (max-width: 480px) {
-//       .product_list_lists {
-//         flex-basis: 100%;
-//       }
-//     }
-//   `;
-//   return (
-//     <>
-//       <Wrapper>
-//       <div className="sortsection">
-//         <p>{`${api.length} Products Available`}</p>
-//         <div className="view_category">
-//         <RiListView />
-//         <MdGridView />
-//         </div>
-//         <input type="text" name="search" className="search" placeholder="Search..."/>
-//       </div>
-
-//         <div className="product_list">
-//         {api.map((curElem) => (
-//           <div key={curElem.id} className="product_list_lists">
-//             <figure>
-//               <img src={curElem.image} alt="product" />
-//               <figcaption className="caption">{curElem.category}</figcaption>
-//             </figure>
-//             <h1>{curElem.name}</h1>
-//             <p>{curElem.price}</p>
-//           </div>
-//         ))}
-//         </div>
-
-//       </Wrapper>
-//     </>
-//   );
-// };
-
-// export default Products;
-
-
-
-// import React, { useState } from "react";
-// import styled from "styled-components";
-// import { ProductApi } from "../Api/ProductApi";
-// import { RiListView } from "react-icons/ri";
-// import { MdGridView } from "react-icons/md";
-
-// const Products = () => {
-//   const [api, setApi] = useState(ProductApi);
-//   const [searchText, setSearchText] = useState("");
-//   const [list, setList] = useState(false);
-
-// //   const Wrapper = styled.section`
-// //   display: flex;
-// //   flex-direction: column;
-// //   gap: 20px;
-
-// //   .sortsection {
-// //     display: flex;
-// //     justify-content: center;
-// //     align-items: center;
-// //     gap: 20px;
-// //   }
-
-// //   .view_category {
-// //     display: flex;
-// //     gap: 10px;
-// //   }
-
-// //   .view_category svg {
-// //     cursor: pointer;
-// //     font-size: 24px;
-// //   }
-
-// //   form {
-// //     margin-top: 20px;
-// //   }
-
-// //   input.search {
-// //     padding: 8px 10px;
-// //     border-radius: 4px;
-// //     border: 1px solid #ccc;
-// //     width: 100%;
-// //     max-width: 300px;
-// //   }
-
-// //   .product_list {
-// //     display: flex;
-// //     flex-direction: column;
-// //     gap: 20px;
-// //   }
-
-// //   .product_list_lists {
-// //     display: grid;
-// //     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-// //     gap: 20px;
-// //   }
-
-// //   .product_list_lists figure {
-// //     margin: 0;
-// //     padding: 0;
-// //     overflow: hidden;
-// //   }
-
-// //   .product_list_lists img {
-// //     width: 100%;
-// //     height: auto;
-// //     border-radius: 8px;
-// //   }
-
-// //   .product_list_lists h1,
-// //   .product_list_lists p {
-// //     margin: 0;
-// //   }
-
-// //   .product_list_lists .caption {
-// //     font-size: 14px;
-// //     margin-top: 5px;
-// //   }
-
-// //   @media screen and (max-width: 768px) {
-// //     .product_list_lists {
-// //       flex-basis: calc(50% - 20px);
-// //     }
-// //   }
-
-// //   @media screen and (max-width: 480px) {
-// //     .product_list_lists {
-// //       flex-basis: 100%;
-// //     }
-// //   }
-// // `;
-
-//   const Wrapper = styled.section`
-//     display: flex;
-//     flex-direction: column;
-//     gap: 20px;
-
-//     .sortsection {
-//       display: flex;
-//       justify-content: space-between;
-//       align-items: center;
-//       flex-wrap: wrap;
-//       gap: 20px;
-//     }
-
-//     .product_list {
-//       display: flex;
-//       flex-wrap: wrap;
-//       gap: 20px;
-//     }
-
-//     .product_list_lists {
-//       flex: 1 1 200px;
-//       max-width: 300px;
-//       border: 1px solid #ccc;
-//       padding: 20px;
-//       border-radius: 8px;
-//     }
-
-//     .product_list_lists img {
-//       width: 100%;
-//       max-width: 100%;
-//       height: auto;
-//       border-radius: 8px;
-//     }
-
-//     .caption {
-//       margin-top: 10px;
-//       font-size: 14px;
-//     }
-
-//     h1 {
-//       font-size: 18px;
-//       margin: 10px 0;
-//     }
-
-//     p {
-//       font-size: 16px;
-//       color: #333;
-//     }
-
-//     input.search {
-//       padding: 8px 10px;
-//       border-radius: 4px;
-//       border: 1px solid #ccc;
-//     }
-
-//     @media screen and (max-width: 768px) {
-//       .product_list_lists {
-//         flex-basis: calc(50% - 20px);
-//       }
-//     }
-
-//     @media screen and (max-width: 480px) {
-//       .product_list_lists {
-//         flex-basis: 100%;
-//       }
-//     }
-//   `;
-//   const updatefiltervalue = (e) => {
-//     setSearchText(e.target.value);
-//   };
-
-//   const filteredProducts = api.filter((curElem) =>
-//     curElem.name.toLowerCase().includes(searchText.toLowerCase())
-//   );
-
-//   const setListView = () => {
-//     setList(true);
-//   };
-
-//   const setGridView = () => {
-//     setList(false);
-//   };
-
-//   return (
-//     <>
-//       <Wrapper>
-//         <div className="sortsection">
-//           <p>{`${filteredProducts.length} Products Available`}</p>
-//           <div className="view_category">
-//             <RiListView onClick={setListView} />
-//             <MdGridView onClick={setGridView} />
-//           </div>
-//           <form onSubmit={(e) => e.preventDefault()}>
-//             <input
-//               type="text"
-//               name="text"
-//               value={searchText}
-//               onChange={updatefiltervalue}
-//               placeholder="Search for items"
-//             />
-//           </form>
-//         </div>
-
-//         <div className={list ? "product_list" : "product_list_lists"}>
-//           {filteredProducts.map((curElem) => (
-//             <div key={curElem.id}>
-//               <figure>
-//                 <img src={curElem.image} alt="product" />
-//                 <figcaption className="caption">{curElem.category}</figcaption>
-//               </figure>
-//               <h1>{curElem.name}</h1>
-//               <p>{curElem.price}</p>
-//             </div>
-//           ))}
-//         </div>
-//       </Wrapper>
-//     </>
-//   );
-// };
-
-// export default Products;
-
-
-
-
-
-
-
-
 
 
 // import React, { useState,useRef } from "react";
@@ -516,7 +148,7 @@
 
 
 
-import React, { useState } from "react";
+import React, { useState ,useRef,useEffect } from "react";
 import styled from "styled-components";
 import { ProductApi } from "../Api/ProductApi";
 import { RiListView } from "react-icons/ri";
@@ -527,11 +159,17 @@ const Products = () => {
   const [api, setApi] = useState(ProductApi);
   const [searchText, setSearchText] = useState("");
   const [list, setList] = useState(false);
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
   const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  min-height:80vh;
 
   .sortsection {
     display: flex;
@@ -572,12 +210,13 @@ const Products = () => {
 
   }
 
-  input.search {
+  form > input {
     padding: 8px 10px;
     border-radius: 4px;
-    border: 1px solid #ccc;
-    width: 100%;
+    border: 2px solid #ccc;
+    // width: 100%;
     max-width: 300px;
+    font-size:15px;
   }
 
   // of list view
@@ -642,7 +281,11 @@ const Products = () => {
   .product_list_lists {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 4rem;
+    margin: 0 1.5rem 1rem 1.5rem;
+  }
+  .product_list_lists .all_description{
+padding:0 5px; 
   }
 
   .inside_listing{
@@ -679,7 +322,7 @@ const Products = () => {
   }
 
   .product_list, .product_list_lists{
-    margin:0 0 5rem 0;
+    // margin:0 0 5rem 0;
   }
 
   @media screen and (max-width: 768px) {
@@ -695,11 +338,20 @@ const Products = () => {
   }
 `;
 
- 
-  const updatefiltervalue = (e) => {
-    setSearchText(e.target.value);
-  };
+ //focus on searchbar not working
+  // const updatefiltervalue = (e) => {
+  //   setSearchText(e.target.value);
+  // };
 
+  //focus restore on searchbar
+  const updatefiltervalue = (e) => {
+    const cursorPosition = inputRef.current.selectionStart; // Store cursor position
+    setSearchText(e.target.value);
+    setTimeout(() => {
+      inputRef.current.selectionStart = inputRef.current.selectionEnd = cursorPosition;
+      inputRef.current.focus();
+    }, 0);
+  };
   const filteredProducts = api.filter((curElem) =>
     curElem.name.toLowerCase().includes(searchText.toLowerCase())
   );
@@ -718,17 +370,18 @@ const Products = () => {
         <div className="sortsection">
 
           <div className="view_category">
-            <RiListView onClick={setListView} className={list ? "active" : ""} />
+            <RiListView onClick={setListView} className={ list ? "active" : ""} />
             <MdGridView onClick={setGridView} className={!list ? "active" : ""}/>
           </div>
           <h2>{`${filteredProducts.length} Products Available`}</h2>
 
-          <form onSubmit={(e) => e.preventDefault()}>
+          <form >
             <input
+              ref={inputRef}
               type="text"
               name="text"
               value={searchText}
-              onChange={updatefiltervalue}
+              onChange={updatefiltervalue }
               placeholder="Search for items"
             />
           </form>
@@ -744,17 +397,19 @@ const Products = () => {
             //   <h1>{curElem.name}</h1>
             //   <p>{curElem.price}</p>
             // </div>
-<div className="inside_listing">
-            <NavLink key={curElem.id} to={`/product/${curElem.id}`}>
+            
+<div className="inside_listing" key={curElem.id}>
+  {console.log('Cirrent elem', curElem)}
+            <NavLink to={`/product/${curElem.id}`}>
                 <figure>
                   <img src={curElem.image} alt="product" />
-                  <figcaption className="caption" style={{textAlign:"center"}}><h1>{curElem.name}</h1> </figcaption>
+                  <figcaption className="caption" style={{textAlign:"center",textTransform:"uppercase",color:"#5041FA"}}><h1 >{curElem.name}</h1> </figcaption>
                 <hr style={{color:"black"}}></hr>
                 </figure>
             </NavLink>
                 <div className="all_description">
                 <h1>{curElem.category}</h1>
-                <p>{curElem.price}</p>
+                <p>Rs: {curElem.price}</p>
                { list? <p>{curElem.description}</p>: null}
                 </div>
 

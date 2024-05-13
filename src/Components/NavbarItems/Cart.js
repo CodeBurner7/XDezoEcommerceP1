@@ -7,12 +7,17 @@ import { NavLink } from "react-router-dom";
 
 const Wrapper = styled.section`
   margin: 5rem 1rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+
+
 
   .container {
     border: 2px solid black;
-    margin: 0 auto;
-    padding: 1rem;
-    max-width: 800px;
+    // margin: 0 auto;
+    // padding: 1rem;
+    // max-width: 800px;
   }
 
   .wrap5-col {
@@ -34,18 +39,26 @@ const Wrapper = styled.section`
   .buttons-incart {
     margin-top: 1rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     flex-wrap: wrap;
+    // margin: 0 auto;
+    // max-width: 800px;
+    gap:1rem;
+    // background-color:red;
+    // padding: 1rem;
+
   }
 
-  .buttons-incart > * {
-    flex: 1;
-    margin-bottom: 0.5rem;
-  }
+  // .buttons-incart > * {
+  //   flex: 1;
+  //   margin-bottom: 0.5rem;
+  // }
 
   .totals {
     margin-top: 1rem;
-    text-align: center;
+    text-align: right;
+    // max-width: 800px;
+    // margin:0 auto;
   }
 `;
 const Button = styled.button`
@@ -94,13 +107,13 @@ const Cart = () => {
 
       <div className="totals">
         <div>
-          <p>Subtotal: {totalAmount}</p>
+          <h3>Subtotal: {totalAmount}</h3>
         </div>
         <div>
-          <p>Shipping Fee: {shippingFee}</p>
+          <h3>Shipping Fee: {shippingFee}</h3>
         </div>
         <div>
-          <p>Total Amount: {totalAmount + shippingFee}</p>
+          <h3>Total Amount: {totalAmount + shippingFee}</h3>
         </div>
       </div>
     </Wrapper>
